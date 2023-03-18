@@ -10,9 +10,15 @@
 <body>
 <div class="container">
     <form method="POST" th:action="@{/todos/create}" th:object="${newTodo}">
+        <div class="form-group">
+        <label th:text = "#{todo.zadanie}"></label>
     <input class="form-control" type="text" th:field="*{zadanie}">
+        </div>
+        <div class="form-group">
+        <label th:text = "#{todo.termin}"></label>
     <input class="form-control" type="date" th:field="*{termin}">
-    <input class="form-control" type="submit" value="Stwórz">
+        </div>
+    <input class="form-control btn btn-primary" type="submit" th:value="#{button.stworz}">
     </form>
     </div>
 </div>
