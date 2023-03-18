@@ -34,6 +34,9 @@ public class GaleriaController {
 
     @PostMapping
     public String wrzuc (@RequestParam("obraz")MultipartFile file) throws IOException {
+        if (file.isEmpty()) {
+            return "redirect:/galeria";
+        }
         Obraz nowy = new Obraz();
         nowy.nazwa = file.getOriginalFilename();
         nowy.zawartosc = file.getBytes();

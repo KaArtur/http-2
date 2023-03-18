@@ -16,9 +16,9 @@
         </form>
     </div>
     <div class="row">
-        <div class="col-4" th:each="o : ${obrazy}">
-            <img th:src=" '/galeria/'+ ${o.nazwa}" style = "max-height: 200px">
-            <div th:text="${o.nazwa}"></div>
+        <div class="col-4 text-center" th:each="o : ${obrazy}">
+            <img class="img-thumbnail rounded" th:src=" '/galeria/'+ ${o.nazwa}" style = "max-height: 200px">
+            <p th:text="${o.nazwa}"></p>
         </div>
     </div>
 
